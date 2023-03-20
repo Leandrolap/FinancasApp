@@ -9,6 +9,11 @@ public partial class TransactionList : ContentPage
 
 	private void OnButtonCliked_TransactionAdd(object sender, EventArgs args)
 	{
-		App.Current.MainPage = new TransactionAdd();
+		Navigation.PushModalAsync(new TransactionAdd());
 	}
+
+    private void OnButtonCliked_TransactionEdit(object sender, EventArgs e)
+    {
+        Navigation.PushModalAsync(new TransactionEdit());
+    }
 }

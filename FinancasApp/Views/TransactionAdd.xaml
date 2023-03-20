@@ -11,10 +11,15 @@
                        HorizontalOptions="Center" 
                        TextColor="White"/>
 
-                <Label Text="X" 
-                       Grid.Column="1"
-                       HorizontalOptions="Center" 
-                       TextColor="White"/>
+                <Image Grid.Column="1"
+                       HorizontalOptions="Center"
+                       Source="iconClose.png"
+                       WidthRequest="17"
+                       BackgroundColor="AliceBlue">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
             </Grid>
         </Border>
 

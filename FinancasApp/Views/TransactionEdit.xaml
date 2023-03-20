@@ -3,10 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinancasApp.Views.TransactionEdit"
              Title="TransactionEdit">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    
+    <VerticalStackLayout Spacing="15">
+        <Border Background="black" Padding="15" StrokeShape="RoundRectangle 30" Margin="15" Stroke="Transparent">
+            <Grid ColumnDefinitions="*, 30">
+                <Label Text="Atualizar"
+                       HorizontalOptions="Center" 
+                       TextColor="White"/>
+
+                <Image Grid.Column="1"
+                       HorizontalOptions="Center"
+                       Source="iconClose.png"
+                       WidthRequest="17"
+                       BackgroundColor="AliceBlue">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </Border>
+
+        <Grid ColumnDefinitions="*,*" Margin="30,0">
+            <RadioButton IsChecked="True"
+                         Content="Receita"/>
+
+            <RadioButton Content="Despesa"
+                         Grid.Column="1"
+                         HorizontalOptions="End"/>
+        </Grid>
+
+        <Entry Placeholder="Nome" 
+               Margin="15,0"/>
+
+        <DatePicker Margin="15,0"/>
+
+        <Entry Placeholder="Valor"
+               Margin="15,0"/>
+
+        <Button Text="salvar"
+                Margin="15,0"
+                HorizontalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>
